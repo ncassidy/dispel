@@ -2,6 +2,7 @@ var App = require('./app.js');
 var Clear = require('clear');
 var Inquirer = require('inquirer');
 var Chalk = require('chalk');
+var Figlet = require('figlet');
 
 
 const _options = {
@@ -472,7 +473,11 @@ var Menu = {
 
     menuReset: function(){
         Clear(true);
-        console.log('[DISPEL]');
+        console.log(Chalk.cyan(Figlet.textSync('DISPEL', {
+            font: 'Thick',
+            horizontalLayout: 'default',
+            verticalLayout: 'default'
+        })));
     }
 };
 
