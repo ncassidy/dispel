@@ -80,7 +80,7 @@ var App = {
         }
 
         // Attempt to Get Tweets
-        console.log(Chalk.black.bgGreenBright(target.since_id ? '\n[ Searching: ' + Chalk.blue.underline(params.screen_name) + ' - Since: ' + params.since_id + ' ]' : '\n[ Searching: ' + Chalk.blue.underline(params.screen_name) + ' ]'));
+        console.log(Chalk.black.bgCyan(target.since_id ? '\n[ Searching: ' + Chalk.red.underline(params.screen_name) + ' - Since: ' + params.since_id + ' ]' : '\n[ Searching: ' + Chalk.red.underline(params.screen_name) + ' ]'));
         connection.get('statuses/user_timeline', params, function(err, tweets, response) {
             if (!err) {
                 if (tweets && tweets.length && tweets.length > 0) {
@@ -92,7 +92,7 @@ var App = {
                     // Update Last Tweet ID
                     App.setLastTweedId(targetIndex, tweets);
                 } else {
-                    console.log(Chalk.black.yellowBright('\n[ Searching: ' + Chalk.blue.underline(params.screen_name) + ' - No New Tweets Available! ]'));
+                    console.log(Chalk.black.yellowBright('\n[ Searching: ' + Chalk.red.underline(params.screen_name) + ' - No New Tweets Available! ]'));
                 }
             } else {
                 App.handleError(err, targetIndex);
@@ -108,10 +108,10 @@ var App = {
         };
 
         // Attempt to Reply
-        console.log(Chalk.black.bgGreenBright('\n[ Replying to Tweet: ' + Chalk.blue.underline(params.in_reply_to_status_id) + ' ]'));
+        console.log(Chalk.black.bgCyan('\n[ Replying to Tweet: ' + Chalk.red.underline(params.in_reply_to_status_id) + ' ]'));
         connection.post('statuses/update', params, function(err, data, response) {
             if (!err) {
-                console.log(Chalk.black.bgGreenBright('\n[ Reply to Tweet: ' + Chalk.blue.underline(params.in_reply_to_status_id) + ' - SUCCEEDED ]'));
+                console.log(Chalk.black.bgCyan('\n[ Reply to Tweet: ' + Chalk.red.underline(params.in_reply_to_status_id) + ' - SUCCEEDED ]'));
             } else {
                 App.handleError(err);
             }
@@ -136,7 +136,7 @@ var App = {
         } else {
             delete _config.targets[targetIndex].account_index;
             _config.targets[targetIndex].is_blocked = true;
-            console.log(Chalk.bgRed('\n[ ERROR: All Accounts Blocked for Target: ' + Chalk.blue.underline(_config.targets[targetIndex].screen_name) + ' - Disabling Target! ]'));
+            console.log(Chalk.bgRed('\n[ ERROR: All Accounts Blocked for Target: ' + Chalk.green.underline(_config.targets[targetIndex].screen_name) + ' - Disabling Target! ]'));
             _blockedList.push(_config.targets[targetIndex].screen_name);
         }
 
@@ -163,7 +163,7 @@ var App = {
                 case 226:
                 case 179:
                 case 136:
-                    console.log(Chalk.bgRed('\n[ ERROR: Account Blocked for Target: ' + Chalk.blue.underline(_config.targets[targetIndex].screen_name) + ' - Attempting request with another account! ]'));
+                    console.log(Chalk.bgRed('\n[ ERROR: Account Blocked for Target: ' + Chalk.green.underline(_config.targets[targetIndex].screen_name) + ' - Attempting request with another account! ]'));
                     App.updateRequestAccount(targetIndex);
                     break;
 
