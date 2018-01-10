@@ -1,0 +1,12 @@
+{
+    "accounts": [
+
+    ],
+    "targets": [
+
+    ],
+    "settings": {
+        "scanInterval": 10,
+        "scanLimit": 5
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "dispel",
+  "version": "1.0.0",
+  "description": "Dispel is an automated misinformation opposition application useful for calling attention to suspected bots and demagogues found on Twitter.",
+  "main": "./src/main.js",
+  "bin": "./src/main.js",
+  "scripts": {
+    "start": "node ./src/main.js"
+  },
+  "author": "ncassidy@code-craft.io",
+  "license": "MIT",
+  "dependencies": {
+    "twitter": "^1.7.1",
+    "jsonfile": "^4.0.0",
+    "chalk": "^2.3.0",
+    "clear": "^0.0.1",
+    "inquirer": "^5.0.0"
+  }
+}
