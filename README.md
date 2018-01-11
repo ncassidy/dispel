@@ -1,7 +1,7 @@
 
 
 # Nyet
-Nyet is an automated misinformation opposition bot application useful for calling attention to suspected Russian bots found on Twitter. Nyet phonetically means "no" in Russian.
+Nyet is an automated misinformation opposition application useful for calling attention to suspected Russian Twitter bots. Phonetically, "nyet" means "no" in Russian.
 
 ## How to get Nyet up and running:
 1. Download and install [node.js](https://nodejs.org/en/download/).
