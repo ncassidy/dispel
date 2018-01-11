@@ -398,10 +398,10 @@ var Menu = {
                     var intervalQuestions = [            {
                             type: 'input',
                             name: 'scanInterval',
-                            message: "How many seconds between target scans would you like to wait (Default: 10 seconds)?",
+                            message: "How many seconds between target scans would you like to wait (Default: 15 seconds)?",
                             prefix: '',
                             default: function() {
-                                return 10;
+                                return 15;
                             },
                             validate: function(val) {
                                 // Valid Characters

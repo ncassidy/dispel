@@ -46,5 +46,5 @@ npm start
 
 
 ## Defaults:
-- Nyet scans all targets on a 20 second interval. This can be changed by selecting the "Update Scan Interval" option from the "Settings" menu item.
+- Nyet scans all targets on a 15 second interval. This can be changed by selecting the "Update Scan Interval" option from the "Settings" menu item.
 - Nyet replys to the most recent 5 Tweets of each target - since the last replied to Tweet. This limit count can be changed by selecting the "Update Scan Reply Limit" option from the "Settings" menu item.
