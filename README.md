@@ -25,6 +25,7 @@ npm start
 ```
 8. From the "Main Menu", select the "Accounts" menu item and "Add Account" using the information obtained above.
 
+
 ##How to setup one or more suspected Russian bot targets:
 1. Find a Russian Twitter bot that is actively participating on Twitter. Be sure to write their Twitter handle down.
 2. Start the Nyet application.
@@ -33,6 +34,7 @@ npm start
 ``` 
 3. From the "Main Menu", select the "Targets" menu item and "Add Target" using the Twitter handle obtained above.
 
+
 ##How to begin automate scanning and replies to suspected Russian bots:
 1. Start the Nyet application.
 ```bash
@@ -40,6 +42,7 @@ npm start
 ``` 
 1. Once you've added one or more valid accounts and targets, from the "Main Menu", select the "Start Scanning" option.
 
-#Defaults:
+
+##Defaults:
 - Nyet scans all targets on a 20 second interval. This can be changed by selecting the "Update Scan Interval" option from the "Settings" menu item.
 - Nyet replys to the most recent 5 Tweets of each target - since the last replied to Tweet. This limit count can be changed by selecting the "Update Scan Reply Limit" option from the "Settings" menu item.
