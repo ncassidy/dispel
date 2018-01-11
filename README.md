@@ -1,11 +1,11 @@
 
-# Dispel
-Dispel is an automated misinformation opposition application useful for calling attention to suspected bots and political demagogues found on Twitter.
+# Nyet
+Nyet is an automated misinformation opposition bot application useful for calling attention to suspected Russian bots found on Twitter. Nyet phonetically means "no" in Russian.
 
-### How to get the application running:
+### How to get Nyet up and running:
 1. Install [node.js](https://nodejs.org/en/download/).
-2. Clone the Dispel repository: `git clone https://github.com/ncassidy/dispel.git`
-3. Open a command line interface and navigate to the repository root: `/dispel`.
+2. Clone the Nyet repository: `git clone https://github.com/ncassidy/nyet.git`
+3. Open a command line interface and navigate to the repository root directory: `/nyet`.
 4. Execute the following commands at the repository root.
 ```bash
 npm install
@@ -22,5 +22,5 @@ npm start
 ```
 12. Select the "Accounts" menu and "Add Account" using the information obtained to add an account.
 13. Go back to the "Main Menu" and select the "Targets" menu.
-14. Select "Add Targets" and add a suspected bot or political demagogue.
+14. Select "Add Targets" and add a suspected Russian bot or political demagogue.
 15. Go back to the "Main Menu" and select "Start Scanning".

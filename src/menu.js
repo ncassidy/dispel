@@ -18,8 +18,8 @@ const _options = {
     remove_account: 'Remove Account',
     test_account: 'Test Account',
 
-    interval_setting: 'Update Interval',
-    limit_setting: 'Update Limit',
+    interval_setting: 'Update Scan Interval',
+    limit_setting: 'Update Scan Reply Limit',
 
     exit: 'Exit',
     return: 'Return'
@@ -473,7 +473,7 @@ var Menu = {
 
     menuReset: function(){
         Clear(true);
-        console.log(Chalk.cyan(Figlet.textSync('DISPEL', {
+        console.log(Chalk.cyan(Figlet.textSync('NYET', {
             font: 'Thick',
             horizontalLayout: 'default',
             verticalLayout: 'default'
