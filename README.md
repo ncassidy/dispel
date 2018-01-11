@@ -3,6 +3,7 @@
 # Nyet
 Nyet is an automated misinformation opposition application useful for calling attention to suspected Russian Twitter bots. Phonetically, "nyet" means "no" in Russian.
 
+
 ## How to get Nyet up and running:
 1. Download and install [node.js](https://nodejs.org/en/download/).
 2. Download the Nyet [application](https://github.com/ncassidy/nyet) or Clone the Nyet repository directly: `git clone https://github.com/ncassidy/nyet.git`
@@ -13,8 +14,8 @@ npm install
 npm start
 ```
 
-## How to setup one or more accounts:
 
+## How to setup one or more accounts:
 1. Create a [Twitter Account](https://twitter.com/signup).
 2. Create a [Twitter Application](https://apps.twitter.com/) under your account.
 3. Within your created Twitter Application, click on the "Keys and Access Tokens" tab.
@@ -42,7 +43,7 @@ npm start
 ```bash
 npm start
 ``` 
-2. Once you've added one or more valid accounts and targets, from the "Main Menu", select the "Start Scanning" option.
+2. After one or more valid accounts and bot targets have been added to Nyet, from the "Main Menu", select the "Start Scanning" option.
 
 
 ## Defaults:
