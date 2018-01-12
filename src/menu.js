@@ -7,6 +7,7 @@ var Figlet = require('figlet');
 
 const _options = {
     scan: 'Start Scanning',
+    report: 'Start Reporting',
     targets: 'Targets',
     accounts: 'Accounts',
     settings: "Settings",
@@ -36,7 +37,7 @@ var Menu = {
                 name: 'main_menu',
                 prefix: '',
                 message: 'MAIN MENU:',
-                choices: [_options.scan, _options.targets, _options.accounts, _options.settings, new Inquirer.Separator(), _options.exit]
+                choices: [_options.scan, _options.report, _options.targets, _options.accounts, _options.settings, new Inquirer.Separator(), _options.exit]
               }
         ];
 
@@ -45,6 +46,11 @@ var Menu = {
                 // Begin Scanning
                 case _options.scan:
                     App.startScan(Menu);
+                    break;
+
+                // Begin Reporting
+                case _options.report:
+                    App.startReporting(Menu);
                     break;
 
                 // Modify Targets

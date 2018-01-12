@@ -32,6 +32,30 @@ var App = {
         App.searchTargets();
     },
 
+    startReporting: function(){
+        App.setConfig();
+        _blockedList = [];
+
+        // Validate Config
+        if(!App.isConfigReady()){
+            console.log(Chalk.bgRed('\n[ ERROR: Accounts and Targets MUST be Configured - Returning to Main Menu! ]'));
+            App.backToMenu(Menu);
+            return;
+        }
+
+        var reportTask = setInterval(function(){
+            if(_blockedList.length === _config.targets.length){
+                clearInterval(scanTask);
+                console.log(Chalk.bgRed('\n[ ERROR: All Accounts Blocked by Targets - Returning to Main Menu! ]'));
+                App.backToMenu(Menu);
+            }
+
+            App.reportTargets();
+        }, 300 * 1000); // Report Every 5 Min
+
+        App.reportTargets();
+    },
+
     setConfig: function(){
         _config = JsonFile.readFileSync(__dirname + '/config.json');
 
@@ -56,6 +80,13 @@ var App = {
                 var connection = App.getConnetion(_config.targets[x]);
                 App.getTweets(connection, _config.targets[x], x);
             }
+        }
+    },
+
+    reportTargets: function() {
+        for(let x = 0; x < _config.targets.length; x++){
+            var connection = App.getConnetion(_config.targets[x]);
+            App.report(connection, _config.targets[x], x);
         }
     },
 
@@ -118,6 +149,24 @@ var App = {
         });
     },
 
+    report: function(connection, target, targetIndex){
+        // Set Report Params
+        var params = {
+            screen_name: target.screen_name,
+            perform_block: false,
+        };
+
+        // Attempt Report
+        console.log(Chalk.black.bgCyan('\n[ Reporting Target: ' + Chalk.red.underline(params.screen_name) + ' ]'));
+        connection.post('users/report_spam', params, function(err, data, response) {
+            if (!err) {
+                console.log(Chalk.black.bgCyan('\n[ Report Target: ' + Chalk.red.underline(params.screen_name) + ' - SUCCEEDED ]'));
+            } else {
+                App.handleError(err, targetIndex);
+            }
+        });
+    },
+
     setLastTweedId: function(targetIndex, tweets){
         if (tweets[0] && tweets[0].id_str) {
             _config.targets[targetIndex].since_id = tweets[0].id_str;
@@ -168,8 +217,9 @@ var App = {
                     break;
 
                 // Rate Limit Exceeded
+                case 261:
                 case 88:
-                    console.log('\n[ ERROR: Rate Limit Exceeded - Attempting request with another account! ]');
+                    console.log(Chalk.bgRed('\n[ ERROR: Rate Limit Exceeded - Attempting request with another account! ]'));
                     App.updateRequestAccount(targetIndex);
                     break;
 

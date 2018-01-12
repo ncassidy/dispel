@@ -46,6 +46,14 @@ npm start
 2. After one or more valid accounts and bot targets have been added to Nyet, from the "Main Menu", select the "Start Scanning" option.
 
 
+## How to begin automated abuse reporting of suspected Russian bot threads:
+1. Start the Nyet application.
+```bash
+npm start
+``` 
+2. After one or more valid accounts and bot targets have been added to Nyet, from the "Main Menu", select the "Start Reporting" option. Each target will be reported every 5 minutes.
+
+
 ## Defaults:
 - Nyet scans all targets on a 15 second interval. This can be changed by selecting the "Update Scan Interval" option from the "Settings" menu item.
 - Nyet replys to the most recent 5 Tweets of each target - since the last replied to Tweet. This limit count can be changed by selecting the "Update Scan Reply Limit" option from the "Settings" menu item.
