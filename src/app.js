@@ -51,7 +51,7 @@ var App = {
             }
 
             App.reportTargets();
-        }, 300 * 1000); // Report Every 5 Min
+        }, 120 * 1000); // Report Every 2 Minutes
 
         App.reportTargets();
     },

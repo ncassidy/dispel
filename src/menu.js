@@ -6,8 +6,8 @@ var Figlet = require('figlet');
 
 
 const _options = {
-    scan: 'Start Scanning',
-    report: 'Start Reporting',
+    scan: 'Scan Bots',
+    report: 'Report Bots',
     targets: 'Targets',
     accounts: 'Accounts',
     settings: "Settings",
@@ -43,12 +43,12 @@ var Menu = {
 
         Inquirer.prompt(mainMenu).then(response => {
             switch(response.main_menu) {
-                // Begin Scanning
+                // Begin Scanning Bots
                 case _options.scan:
                     App.startScan(Menu);
                     break;
 
-                // Begin Reporting
+                // Begin Reporting Bots
                 case _options.report:
                     App.startReporting(Menu);
                     break;
