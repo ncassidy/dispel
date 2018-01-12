@@ -29,7 +29,7 @@ npm start
 8. From the "Main Menu", select the "Accounts" menu item and "Add Account" using the information obtained above.
 
 
-## How to setup one or more suspected Russian bot targets:
+## How to setup one or more suspected bot targets:
 1. Find a Russian Twitter bot that is actively participating on Twitter. Be sure to write their Twitter handle down.
 2. Start the Nyet application.
 ```bash
@@ -38,7 +38,7 @@ npm start
 3. From the "Main Menu", select the "Targets" menu item and "Add Target" using the Twitter handle obtained above.
 
 
-## How to begin automated tweet scanning with replies to suspected Russian bot threads:
+## How to begin automated tweet scanning and reply to suspected bots:
 1. Start the Nyet application.
 ```bash
 npm start
@@ -46,7 +46,7 @@ npm start
 2. After one or more valid accounts and bot targets have been added to Nyet, from the "Main Menu", select the "Scan Bots" option.
 
 
-## How to begin automated abuse reporting of suspected Russian bot threads:
+## How to begin automated abuse reporting of suspected bots:
 1. Start the Nyet application.
 ```bash
 npm start
