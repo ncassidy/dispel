@@ -92,7 +92,7 @@ var App = {
                     // Update Last Tweet ID
                     App.setLastTweedId(targetIndex, tweets);
                 } else {
-                    console.log(Chalk.black.yellowBright('\n[ Searching: ' + Chalk.red.underline(params.screen_name) + ' - No New Tweets Available! ]'));
+                    console.log(Chalk.black.bgYellowBright('\n[ Searching: ' + Chalk.red.underline(params.screen_name) + ' - No New Tweets Available! ]'));
                 }
             } else {
                 App.handleError(err, targetIndex);
@@ -136,7 +136,7 @@ var App = {
         } else {
             delete _config.targets[targetIndex].account_index;
             _config.targets[targetIndex].is_blocked = true;
-            console.log(Chalk.bgRed('\n[ ERROR: All Accounts Blocked for Target: ' + Chalk.green.underline(_config.targets[targetIndex].screen_name) + ' - Disabling Target! ]'));
+            console.log(Chalk.bgRed('\n[ ERROR: All Accounts Blocked for Target: ' + Chalk.cyan.underline(_config.targets[targetIndex].screen_name) + ' - Disabling Target! ]'));
             _blockedList.push(_config.targets[targetIndex].screen_name);
         }
 
@@ -163,7 +163,7 @@ var App = {
                 case 226:
                 case 179:
                 case 136:
-                    console.log(Chalk.bgRed('\n[ ERROR: Account Blocked for Target: ' + Chalk.green.underline(_config.targets[targetIndex].screen_name) + ' - Attempting request with another account! ]'));
+                    console.log(Chalk.bgRed('\n[ ERROR: Account Blocked for Target: ' + Chalk.cyan.underline(_config.targets[targetIndex].screen_name) + ' - Attempting request with another account! ]'));
                     App.updateRequestAccount(targetIndex);
                     break;
 
