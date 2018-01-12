@@ -1,7 +1,7 @@
 {
-  "name": "dispel",
+  "name": "nyet",
   "version": "1.0.0",
-  "description": "Dispel is an automated misinformation opposition application useful for calling attention to suspected bots and demagogues found on Twitter.",
+  "description": "Nyet is an automated application for opposing Russian propaganda disseminating Twitter bots.",
   "main": "./src/main.js",
   "bin": "./src/main.js",
   "scripts": {
