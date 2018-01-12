@@ -176,11 +176,11 @@ var App = {
     },
 
     updateRequestAccount: function(targetIndex){
-        var currentAccountIndex = _config.targets[targetIndex] && _config.targets[targetIndex].account_index ? _config.targets[targetIndex].account_index : 0;
+        var currentAccountIndex = _config.targets && _config.targets[targetIndex] && _config.targets[targetIndex].account_index ? _config.targets[targetIndex].account_index : 0;
         var nextAccountIndex = currentAccountIndex + 1;
 
         // Update account_id or disable target
-        if(_config.accounts[nextAccountIndex]){
+        if(_config.accounts && _config.accounts[nextAccountIndex]){
             _config.targets[targetIndex].account_index = nextAccountIndex;
         } else {
             delete _config.targets[targetIndex].account_index;
