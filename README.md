@@ -38,7 +38,7 @@ npm start
 3. From the "Main Menu", select the "Targets" menu item and "Add Target" using the Twitter handle obtained above.
 
 
-## How to begin automate scanning and replies to suspected Russian bots:
+## How to begin automated replies to suspected Russian bot threads:
 1. Start the Nyet application.
 ```bash
 npm start
