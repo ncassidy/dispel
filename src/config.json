@@ -4,10 +4,20 @@
         {
             "screen_name": "@senatemajldr",
             "status": [
-                "Moscow Mitch Mcconell has a very competitive election ahead of him this year. Support Amy McGrath's campaign to unseat Mitch in November: ACT BLUE LINK",
-                "Help Kentucky unseat Moscow Mitch in November. Support Amy McGrath's campaign at: ACT BLUE LINK",
-                "Support Amy McGrath's bid to unseat Moscow Mitch this November: ACT BLUE LINK"
-            ]
+                "Moscow Mitch McConell has a very competitive election ahead of him this year. Support Amy McGrath's campaign to send Mitch home in November: https://secure.actblue.com/donate/am-website?refcode=twitter-nyet",
+                "Help Kentucky unseat Moscow Mitch and send him home in November. Support Amy McGrath's campaign at: https://secure.actblue.com/donate/am-website?refcode=twitter-nyet",
+                "Support Amy McGrath's bid to unseat Moscow Mitch McConell this November: https://secure.actblue.com/donate/am-website?refcode=twitter-nyet"
+            ],
+            "since_id": "1213189190667636736"
+        },
+        {
+            "screen_name": "@LindseyGrahamSC",
+            "status": [
+                "Lindsey Graham has a very competitive election ahead of him this year. Support Jaime Harrison's campaign to fire Lindsey in November: https://secure.actblue.com/donate/adopt-jaime-harrison?refcode=twitter-nyet",
+                "Help South Carolina fire Lindsey Graham in November. Support Jaime Harrison's campaign at: https://secure.actblue.com/donate/adopt-jaime-harrison?refcode=twitter-nyet",
+                "Support Jaime Harrison's bid to unseat Lindsey Graham this November: https://secure.actblue.com/donate/adopt-jaime-harrison?refcode=twitter-nyet"
+            ],
+            "since_id": "1213837195821355010"
         }
     ],
     "settings": {
