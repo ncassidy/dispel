@@ -107,7 +107,7 @@ var App = {
         // Set Reply Params
         var params = {
             in_reply_to_status_id: tweet.id_str,
-            status: status.replace(/TWITTER_NAME/g, tweet.user.name),
+            status: target.screen_name + ' ' + status.replace(/TWITTER_NAME/g, tweet.user.name),
         };
 
         // Attempt to Reply
