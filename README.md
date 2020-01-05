@@ -1,7 +1,7 @@
 
 
 # Nyet
-Nyet is an automated misinformation opposition application useful for calling attention to suspected Russian Twitter bots. Phonetically, "nyet" means "no" in Russian.
+Nyet is an automated system useful for quickly replying to targets over Twitter. Phonetically, "nyet" means "no" in Russian.
 
 
 ## How to get Nyet up and running:
@@ -29,29 +29,21 @@ npm start
 8. From the "Main Menu", select the "Accounts" menu item and "Add Account" using the information obtained above.
 
 
-## How to setup one or more suspected bot targets:
-1. Find a Russian Twitter bot that is actively participating on Twitter. Be sure to write their Twitter handle down.
+## How to setup one or more targets:
+1. Find actively participating account on Twitter. Be sure to write their Twitter handle down.
 2. Start the Nyet application.
 ```bash
 npm start
-``` 
+```
 3. From the "Main Menu", select the "Targets" menu item and "Add Target" using the Twitter handle obtained above.
 
 
-## How to begin automated tweet scanning and reply to suspected bots:
+## How to begin automated tweet scanning and reply to targets:
 1. Start the Nyet application.
 ```bash
 npm start
-``` 
-2. After one or more valid accounts and bot targets have been added to Nyet, from the "Main Menu", select the "Scan Bots" option.
-
-
-## How to begin automated abuse reporting of suspected bots:
-1. Start the Nyet application.
-```bash
-npm start
-``` 
-2. After one or more valid accounts and bot targets have been added to Nyet, from the "Main Menu", select the "Report Bots" option. Each target will be reported every 2 minutes.
+```
+2. After one or more valid accounts and bot targets have been added to Nyet, from the "Main Menu", select the "Scan Targets" option.
 
 
 ## Defaults:

@@ -32,30 +32,6 @@ var App = {
         App.searchTargets();
     },
 
-    startReporting: function(){
-        App.setConfig();
-        _blockedList = [];
-
-        // Validate Config
-        if(!App.isConfigReady()){
-            console.log(Chalk.bgRed('\n[ ERROR: Accounts and Targets MUST be Configured - Returning to Main Menu! ]'));
-            App.backToMenu(Menu);
-            return;
-        }
-
-        var reportTask = setInterval(function(){
-            if(_blockedList.length === _config.targets.length){
-                clearInterval(scanTask);
-                console.log(Chalk.bgRed('\n[ ERROR: All Accounts Blocked by Targets - Returning to Main Menu! ]'));
-                App.backToMenu(Menu);
-            }
-
-            App.reportTargets();
-        }, 120 * 1000); // Report Every 2 Minutes
-
-        App.reportTargets();
-    },
-
     setConfig: function(){
         _config = JsonFile.readFileSync(__dirname + '/config.json');
 
@@ -80,13 +56,6 @@ var App = {
                 var connection = App.getConnetion(_config.targets[x]);
                 App.getTweets(connection, _config.targets[x], x);
             }
-        }
-    },
-
-    reportTargets: function() {
-        for(let x = 0; x < _config.targets.length; x++){
-            var connection = App.getConnetion(_config.targets[x]);
-            App.report(connection, _config.targets[x], x);
         }
     },
 
@@ -119,7 +88,7 @@ var App = {
                     for(let i = 0; i < tweets.length; i++){
                         App.reply(connection, target, tweets[i]);
                     }
-    
+
                     // Update Last Tweet ID
                     App.setLastTweedId(targetIndex, tweets);
                 } else {
@@ -132,10 +101,13 @@ var App = {
     },
 
     reply: function(connection, target, tweet){
+        // Get Status
+        var status = typeof status !== 'string' ? target.status[Math.floor(Math.random() * target.status.length)] : target.status;
+
         // Set Reply Params
         var params = {
             in_reply_to_status_id: tweet.id_str,
-            status: target.screen_name + ' ' + target.status.replace(/TWITTER_NAME/g, tweet.user.name),
+            status: status.replace(/TWITTER_NAME/g, tweet.user.name),
         };
 
         // Attempt to Reply
@@ -145,24 +117,6 @@ var App = {
                 console.log(Chalk.black.bgCyan('\n[ Reply to Tweet: ' + Chalk.red.underline(params.in_reply_to_status_id) + ' - SUCCEEDED ]'));
             } else {
                 App.handleError(err);
-            }
-        });
-    },
-
-    report: function(connection, target, targetIndex){
-        // Set Report Params
-        var params = {
-            screen_name: target.screen_name,
-            perform_block: false,
-        };
-
-        // Attempt Report
-        console.log(Chalk.black.bgCyan('\n[ Reporting Target: ' + Chalk.red.underline(params.screen_name) + ' ]'));
-        connection.post('users/report_spam', params, function(err, data, response) {
-            if (!err) {
-                console.log(Chalk.black.bgCyan('\n[ Report Target: ' + Chalk.red.underline(params.screen_name) + ' - SUCCEEDED ]'));
-            } else {
-                App.handleError(err, targetIndex);
             }
         });
     },
@@ -231,7 +185,7 @@ var App = {
                 // Invalid Attachment URL
                 case 44:
                     console.log(Chalk.bgRed('\n[ ERROR: Invalid Attachment URL - The attachment URL is not vaid! ]'));
-                    break;    
+                    break;
 
                 default:
                     // Unhandled Error Codes: https://developer.twitter.com/en/docs/basics/response-codes
@@ -333,5 +287,5 @@ var App = {
     }
 };
 
-  
+
 module.exports = App;

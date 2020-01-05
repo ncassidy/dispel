@@ -6,8 +6,7 @@ var Figlet = require('figlet');
 
 
 const _options = {
-    scan: 'Scan Bots',
-    report: 'Report Bots',
+    scan: 'Scan Targets',
     targets: 'Targets',
     accounts: 'Accounts',
     settings: "Settings",
@@ -37,20 +36,15 @@ var Menu = {
                 name: 'main_menu',
                 prefix: '',
                 message: 'MAIN MENU:',
-                choices: [_options.scan, _options.report, _options.targets, _options.accounts, _options.settings, new Inquirer.Separator(), _options.exit]
-              }
+                choices: [_options.scan, _options.targets, _options.accounts, _options.settings, new Inquirer.Separator(), _options.exit]
+            }
         ];
 
         Inquirer.prompt(mainMenu).then(response => {
             switch(response.main_menu) {
-                // Begin Scanning Bots
+                // Begin Scanning Targets
                 case _options.scan:
                     App.startScan(Menu);
-                    break;
-
-                // Begin Reporting Bots
-                case _options.report:
-                    App.startReporting(Menu);
                     break;
 
                 // Modify Targets
@@ -67,7 +61,7 @@ var Menu = {
                 case _options.settings:
                     Menu.renderSettingsMenu();
                     break;
-                    
+
                 // Exit
                 case _options.exit:
                     Clear(true);
@@ -101,11 +95,11 @@ var Menu = {
                 case _options.remove_target:
                     Menu.renderRemoveTargetMenu();
                     break;
-                
+
                 // Return
                 case _options.return:
                     Menu.renderMainMenu();
-                    break;     
+                    break;
             }
         });
     },
@@ -114,7 +108,7 @@ var Menu = {
         Menu.menuReset();
         var targetsList = App.getTargetsList();
 
-        var addTargetMenu = [ 
+        var addTargetMenu = [
             {
                 type: 'input',
                 name: 'screen_name',
@@ -125,14 +119,14 @@ var Menu = {
                     if (!val.match(/@+[a-zA-Z0-9]/)) {
                         return 'Please enter a valid screen name!';
                     }
-                    
+
                     // No Already Added
                     for(var x = 0; x < targetsList.length; x++){
                         if(targetsList[x].screen_name == val){
                             return 'This screen name is already a target!'
                         }
                     }
-                
+
                     return true;
                 }
             },
@@ -151,11 +145,11 @@ var Menu = {
                     if (val.length >= 260) {
                         return 'Please enter a replay that is under 260 characters!';
                     }
-                
+
                     return true;
                 }
             },
-            { 
+            {
                 type: 'confirm',
                 name: 'confirm',
                 message: "Are you sure that you want to add this target?",
@@ -177,15 +171,15 @@ var Menu = {
         var targetsList = App.getTargetsList();
         var choices = targetsList.map(choice => (choice.screen_name));
 
-        var removeTargetMenu = [ 
+        var removeTargetMenu = [
             {
                 type: 'list',
                 name: 'target',
                 prefix: '',
                 message: 'Which target would you like to remove?',
                 choices: choices
-            }, 
-            { 
+            },
+            {
                 type: 'confirm',
                 name: 'confirm',
                 message: "Are you sure that you want to remove this target?",
@@ -230,12 +224,12 @@ var Menu = {
                 // Test Account
                 case _options.test_account:
                     Menu.renderTestAccountMenu();
-                    break;    
-                
+                    break;
+
                 // Return
                 case _options.return:
                     Menu.renderMainMenu();
-                    break;     
+                    break;
             }
         });
     },
@@ -244,7 +238,7 @@ var Menu = {
         Menu.menuReset();
         var accountList = App.getAccountsList();
 
-        var addAccountMenu = [ 
+        var addAccountMenu = [
             {
                 type: 'input',
                 name: 'screen_name',
@@ -255,14 +249,14 @@ var Menu = {
                     if (!val.match(/@+[a-zA-Z0-9]/)) {
                         return 'Please enter a valid screen name!';
                     }
-                    
+
                     // No Already Added
                     for(var x = 0; x < accountList.length; x++){
                         if(accountList[x].screen_name == val){
                             return 'This account is already included!'
                         }
                     }
-                
+
                     return true;
                 }
             },
@@ -290,7 +284,7 @@ var Menu = {
                 message: "What is the account's access token secret?",
                 prefix: ''
             },
-            { 
+            {
                 type: 'confirm',
                 name: 'confirm',
                 message: "Are you sure that you want to add this account?",
@@ -312,15 +306,15 @@ var Menu = {
         var accountsList = App.getAccountsList();
         var choices = accountsList.map(choice => (choice.screen_name));
 
-        var removeAccountMenu = [ 
+        var removeAccountMenu = [
             {
                 type: 'list',
                 name: 'account',
                 prefix: '',
                 message: 'Which account would you like to remove?',
                 choices: choices
-            }, 
-            { 
+            },
+            {
                 type: 'confirm',
                 name: 'confirm',
                 prefix: '',
@@ -342,7 +336,7 @@ var Menu = {
         var accountsList = App.getAccountsList();
         var choices = accountsList.map(choice => (choice.screen_name));
 
-        var testAccountMenu = [ 
+        var testAccountMenu = [
             {
                 type: 'list',
                 name: 'screen_name',
@@ -373,11 +367,11 @@ var Menu = {
                     choices: [ new Inquirer.Separator(), _options.return ]
                 }];
                 Inquirer.prompt(testAccountResponseMenu).then(response => {
-                    switch(response.reply) {  
+                    switch(response.reply) {
                         // Return
                         case _options.return:
                             Menu.renderAccountsMenu();
-                            break;     
+                            break;
                     }
                 });
             });
@@ -414,11 +408,11 @@ var Menu = {
                                 if (!val.match(/[0-9]/) || !(val > 0)) {
                                     return 'Please enter a valid scan interval!';
                                 }
-                            
+
                                 return true;
                             }
                         },
-                        { 
+                        {
                             type: 'confirm',
                             name: 'confirm',
                             prefix: '',
@@ -449,11 +443,11 @@ var Menu = {
                                 if (!val.match(/[0-9]/) || !(val > 0)) {
                                     return 'Please enter a valid scan limit!';
                                 }
-                            
+
                                 return true;
                             }
                         },
-                        { 
+                        {
                             type: 'confirm',
                             name: 'confirm',
                             prefix: '',
@@ -468,11 +462,11 @@ var Menu = {
                         Menu.renderSettingsMenu();
                     });
                     break;
-                
+
                 // Return
                 case _options.return:
                     Menu.renderMainMenu();
-                    break;     
+                    break;
             }
         });
     },
