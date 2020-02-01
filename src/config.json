@@ -4,24 +4,69 @@
         {
             "screen_name": "@senatemajldr",
             "status": [
-                "Moscow Mitch McConell has a very competitive election ahead of him this year. Support Amy McGrath's campaign to send Mitch home in November: https://secure.actblue.com/donate/am-website?refcode=twitter-nyet",
+                "Mitch McConell has a very competitive election ahead of him this year. Support Amy McGrath's campaign to send Mitch home in November: https://secure.actblue.com/donate/am-website?refcode=twitter-nyet",
                 "Help Kentucky unseat Moscow Mitch and send him home in November. Support Amy McGrath's campaign at: https://secure.actblue.com/donate/am-website?refcode=twitter-nyet",
                 "Support Amy McGrath's bid to unseat Moscow Mitch McConell this November: https://secure.actblue.com/donate/am-website?refcode=twitter-nyet"
             ],
-            "since_id": "1213189190667636736"
+            "since_id": ""
         },
         {
             "screen_name": "@LindseyGrahamSC",
             "status": [
-                "Lindsey Graham has a very competitive election ahead of him this year. Support Jaime Harrison's campaign to fire Lindsey in November: https://secure.actblue.com/donate/adopt-jaime-harrison?refcode=twitter-nyet",
+                "Lindsey Graham has a particularly competitive election ahead of him this year. Support Jaime Harrison's campaign to fire Lindsey in November: https://secure.actblue.com/donate/adopt-jaime-harrison?refcode=twitter-nyet",
                 "Help South Carolina fire Lindsey Graham in November. Support Jaime Harrison's campaign at: https://secure.actblue.com/donate/adopt-jaime-harrison?refcode=twitter-nyet",
                 "Support Jaime Harrison's bid to unseat Lindsey Graham this November: https://secure.actblue.com/donate/adopt-jaime-harrison?refcode=twitter-nyet"
             ],
-            "since_id": "1213837195821355010"
+            "since_id": ""
+        },
+        {
+          "screen_name": "@SenCoryGardner",
+          "status": [
+            "Cory Gardner has a highly competitive election in Colorado. Support John Hickenlooper in November: https://secure.actblue.com/donate/hickenlooperforco-web-donate?refcode=twitter-nyet",
+            "Help Colorado remove Corey Gardner in November. Support John Hickenlooper's campaign at: https://secure.actblue.com/donate/hickenlooperforco-web-donate?refcode=twitter-nyet",
+            "Support John Hickenlooper's bid to unseat Corey Gardner this November: https://secure.actblue.com/donate/hickenlooperforco-web-donate?refcode=twitter-nyet"
+          ],
+          "since_id": ""
+        },
+        {
+          "screen_name": "@SenatorCollins",
+          "status": [
+            "Susan Collins has a highly competitive election in Maine. Support Sara Gideon in November: https://secure.actblue.com/donate/sg-newwebsite?refcode=twitter-nyet",
+            "Help Maine remove Susan Collins in November. Support Sara Gideon's campaign at: https://secure.actblue.com/donate/sg-newwebsite?refcode=twitter-nyet",
+            "Support Sara Gideon's campaign to unseat Susan Collins this November: https://secure.actblue.com/donate/sg-newwebsite?refcode=twitter-nyet"
+          ],
+          "since_id": ""
+        },
+        {
+          "screen_name": "@SenMcSallyAZ",
+          "status": [
+            "Martha McSally has a highly competitive election ahead of her this year. Support Mark Kelly in November: https://secure.actblue.com/donate/ads-mek-egsearch_dtd?refcode=twitter-nyet",
+            "Help Arizona remove Martha McSally in November. Support Mark Kelly's campaign at: https://secure.actblue.com/donate/ads-mek-egsearch_dtd?refcode=twitter-nyet",
+            "Support Mark Kelly's campaign to unseat Martha McSally this November: https://secure.actblue.com/donate/ads-mek-egsearch_dtd?refcode=twitter-nyet"
+          ],
+          "since_id": ""
+        },
+        {
+          "screen_name": "@ThomTillis",
+          "status": [
+            "Thom Tillis has a competitive election ahead of him this year. Support Cal Cunningham in November: https://secure.actblue.com/donate/cal-website?refcode=twitter-nyet",
+            "Help North Carolina remove Thom Tillis in November. Support Cal Cunningham's campaign at: https://secure.actblue.com/donate/cal-website?refcode=twitter-nyet",
+            "Support Cal Cunningham's campaign to unseat Thom Tillis this November: https://secure.actblue.com/donate/cal-website?refcode=twitter-nyet"
+          ],
+          "since_id": ""
+        },
+        {
+          "screen_name": "@SenJoniErnst",
+          "status": [
+            "Joni Ernst has competitive election in NC this year. Support Theresa Greenfield in November: https://secure.actblue.com/donate/tg-website-2020?refcode=twitter-nyet",
+            "Help North Carolina remove Joni Ernst in November. Support Theresa Greenfield's campaign at: https://secure.actblue.com/donate/tg-website-2020?refcode=twitter-nyet",
+            "Support Theresa Greenfield's campaign to unseat Joni Ernst this November: https://secure.actblue.com/donate/tg-website-2020?refcode=twitter-nyet"
+          ],
+          "since_id": ""
         }
     ],
     "settings": {
         "scanInterval": 15,
-        "scanLimit": 5
+        "scanLimit": 3
     }
 }
